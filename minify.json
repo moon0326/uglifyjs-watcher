@@ -1,0 +1,10 @@
+{
+
+	"uglify-js-arguments": "-o",
+	"scripts": [
+		// list your scripts to be minified
+	],
+
+	"minifiedFilename": "minified.js"
+
+}
