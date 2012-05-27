@@ -1,0 +1,27 @@
+{
+  "author": {
+
+      "name"  : "Moon",
+      "email" : "kmk1986@gmail.com"
+
+  },
+  "name": "uglifyjs-watcher",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.10"
+  },
+  "dependencies": {
+    "uglify-js": "1.2.6"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "main": "./uglifyjs-watcher.js",
+  "bin"     : {
+      "uglifyjs-watcher" : "./bin/uglifyjs-watcher"
+  }
+
+
+}
