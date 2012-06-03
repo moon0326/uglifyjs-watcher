@@ -112,6 +112,11 @@ var uglifyjsWatcher = (function(process, fs, exec){
 					isWatching = true;
 				}
 			}
+			else
+			{
+				console.log(error);
+				console.log(stderr);
+			}
 
 		});
 	}
