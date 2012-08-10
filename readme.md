@@ -5,7 +5,7 @@ Installation
 npm install uglifyjs-watcher
 ```
 
-JSON Format (git includes a sample file)
+JSON Format
 ========================================
 
 ```javascript
@@ -13,7 +13,6 @@ JSON Format (git includes a sample file)
 
 	"uglify-js-arguments": "-o",
 	"scripts": [
-		// list your scripts to be minified
 	],
 
 	"minifiedFilename": "minified.js"
