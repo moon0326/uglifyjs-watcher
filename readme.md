@@ -1,3 +1,8 @@
+About
+=====
+
+Tired of minifiying your JS files manually? You can use uglifyjs-watcher to watch your changes in js files. Uglifyjs-watcher will minify all your files whenever you save your files.
+
 Installation
 ============
 
