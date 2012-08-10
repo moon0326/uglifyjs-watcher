@@ -2,7 +2,7 @@
 
 	"uglify-js-arguments": "-o",
 	"scripts": [
-		// list your scripts to be minified
+		"CHANGE TO YOUR SCRIPTS.js"
 	],
 
 	"minifiedFilename": "minified.js"
