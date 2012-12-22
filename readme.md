@@ -7,7 +7,7 @@ Installation
 ============
 
 ```html
-npm install uglifyjs-watcher
+npm install uglifyjs-watcher -g
 ```
 
 JSON Format
