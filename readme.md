@@ -10,6 +10,8 @@ Installation
 npm install uglifyjs-watcher -g
 ```
 
+* Until I make a patch, you MUST install this module with -g option.
+
 JSON Format
 ========================================
 
