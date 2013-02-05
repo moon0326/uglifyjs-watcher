@@ -6,19 +6,18 @@
 
   },
   "name": "uglifyjs-watcher",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "repository": {
-    "url": ""
+    "url": "https://github.com/kmk1986/uglifyjs-watcher"
   },
-  "engines": {
-    "node": "~0.6.10"
-  },
+  "engines": "node >= 0.4.1",
   "dependencies": {
-    "uglify-js": "1.2.6"
+    "uglify-js": "1.x.x"
   },
   "devDependencies": {},
   "optionalDependencies": {},
   "main": "./uglifyjs-watcher.js",
+  "preferGlobal": true,
   "bin"     : {
       "uglifyjs-watcher" : "./bin/uglifyjs-watcher"
   }

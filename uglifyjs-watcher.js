@@ -12,9 +12,21 @@ var uglifyjsWatcher = (function(process, fs, exec){
 	var isWatching = false;
 	var cmdString = "cat";
 	var minifiedIndex = 1;
+	var uglifyjsPath;
 
 	var loadSettingFile = function()
 	{
+
+		// check to see if we have uglify-js
+		 uglifyjsPath = require.resolve("uglify-js");
+
+		if( uglifyjsPath ) {
+			uglifyjsPath = uglifyjsPath.replace("uglify-js.js","")+"bin/uglifyjs";
+		} else {
+			console.log("Please install uglify-js");
+			process.exit();
+		}
+
 
 		if( process.argv[2] == undefined )
 		{
@@ -73,7 +85,7 @@ var uglifyjsWatcher = (function(process, fs, exec){
 
 		});
 
-		cmdString += " | uglifyjs " + list['uglify-js-arguments'] + " " + list.minifiedFilename;
+		cmdString += " | " + uglifyjsPath + " " + list['uglify-js-arguments'] + " " + list.minifiedFilename;
 
 	}
 
