@@ -10,7 +10,7 @@ var uglifyjsWatcher = (function(process, fs, exec){
 	var list;
 
 	var isWatching = false;
-	var cmdString = "cat";
+	var cmdString = "";
 	var minifiedIndex = 1;
 	var uglifyjsPath;
 
@@ -67,10 +67,18 @@ var uglifyjsWatcher = (function(process, fs, exec){
 					process.exit();
 				}
 
+				if( typeof(list['uglify-js-arguments']) !== 'object' || list['uglify-js-arguments'].length == 0 )
+				{
+					console.log("uglify-js-arguments property has length of 0");
+					process.exit();
+				}
+
 			}
 			catch(e)
 			{
+				console.log(e);
 				console.log("can't find a json file: " + process.argv[2] );
+				process.exit();
 			}
 			
 		}
@@ -79,14 +87,23 @@ var uglifyjsWatcher = (function(process, fs, exec){
 
 	var generateUglifyJSCommand = function()
 	{
+		var uglifyArguments = list['uglify-js-arguments'];
+		var cmdStringFiles = "";
+		var cmdStringExtra = "";
+
 		list.scripts.forEach(function(obj,index){
 		
-			cmdString += " " + obj;
+			cmdStringFiles += " " + obj;
 
 		});
 
-		cmdString += " | " + uglifyjsPath + " " + list['uglify-js-arguments'] + " " + list.minifiedFilename;
+		uglifyArguments.forEach(function(obj, index) {
+			cmdStringExtra += " " + obj;
+		});
 
+		cmdString += uglifyjsPath + cmdStringFiles + " -o " + list.minifiedFilename + cmdStringExtra;
+
+		console.log( "Run command: " + cmdString );
 	}
 
 	var watchFiles = function()
