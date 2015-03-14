@@ -21,7 +21,8 @@ var uglifyjsWatcher = (function(process, fs, exec){
 		 uglifyjsPath = require.resolve("uglify-js");
 
 		if( uglifyjsPath ) {
-			uglifyjsPath = uglifyjsPath.replace("uglify-js.js","")+"bin/uglifyjs";
+			//uglifyjsPath = uglifyjsPath.replace("uglify-js.js","")+"bin/uglifyjs";
+			uglifyjsPath = "uglifyjs";
 		} else {
 			console.log("Please install uglify-js");
 			process.exit();
