@@ -18,11 +18,19 @@ JSON Format
 ```javascript
 {
 
-	"uglify-js-arguments": "-o",
-	"scripts": [
-	],
+    "uglify-js-arguments": [
+        "--source-map bundle.min.js.map",
+        "--source-map-root http://localhost/js",
+        "-m",
+        "-c"
+    ],
+    "scripts": [
+        "app.js",
+        "files.js",
+        ...
+    ],
 
-	"minifiedFilename": "minified.js"
+    "minifiedFilename": "minified.js"
 
 }
 ```
